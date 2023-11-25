@@ -6,15 +6,16 @@ let att;
 
 function setup() {
   createCanvas(400, 400);
-  emitter = new Emitter(width / 2, height/2);
-  repeller = new Repeller(width / 2, 350);
-  att = new Attractor(20, height/2);
+  emitter = new Emitter(width / 2, 0);
+  repeller = new Repeller(width / 2, 0);
+  att = new Attractor(width/2, height/2);
 }
 
 function draw() {
   background(255);
     
-  repeller.move(0.5);
+  repeller.move(0.005);
+  att.move(0.005);
   
   emitter.addParticle();
   emitter.addParticle();

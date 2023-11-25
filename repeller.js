@@ -6,7 +6,8 @@ class Repeller {
   }
   
   move(value) {
-    this.position.y -= value;
+    this.position.x = width*noise(value*frameCount);
+    this.position.y = height/2*noise(value*frameCount);
   }
   
 
