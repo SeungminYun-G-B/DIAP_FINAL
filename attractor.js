@@ -5,12 +5,9 @@ class Attractor {
   }
   
   move(value) {
-    
-    this.position.x = width*noise(value*frameCount/2);
-    this.position.y = height*1.2*noise(value*frameCount/2);
+    this.position.y = height*noise(value/150*frameCount);
   }
   
-
 
   show() {
     stroke(0);

@@ -13,6 +13,10 @@ function setup() {
 function draw() {
   background(255);
 
+  repeller.move(1);
+  att.move(1);
+
+
   for(let i=0; i<10; i++){
    emitter.addParticle();
   }
