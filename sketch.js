@@ -15,6 +15,7 @@ function setup() {
 function draw() {
   background(255);
 
+  randomSeed(1);
   repeller.move(1);
   att.move(1);
 
