@@ -1,41 +1,46 @@
-
 let emitter;
-let emitterDown;
+let emitter2;
 let repeller;
 let att;
 
 function setup() {
   createCanvas(800, 1000);
   emitter = new Emitter(width / 2, 0);
-  emitterDown = new EmitterDown(width/2,height);
- 
-
+  emitter2 = new Emitter(width/2,height);
+  repeller = new Repeller(width / 2, 150);
+  att = new Attractor(width/2, height-150);
 }
 
 function draw() {
   background(255);
 
+
+  repeller.move(1);
+  att.move(1);
+
+
   for(let i=0; i<10; i++){
    emitter.addParticle();
   }
-
   for(let i=0; i<10; i++){
-    emitterDown.addParticle();
+    emitter2.addParticle();
    }
-
-   emitter.applyAttractor();
-   emitterDown.applyAttractor();
+      
 
   let gravity = createVector(0, 0.1);
   emitter.applyForce(gravity);
 
-  let gravityDown = createVector(0, -0.1);
-  emitterDown.applyForce(gravityDown);
+  let gravity2 = createVector(0,-0.1);
+   emitter2.applyForce(gravity2);
 
-
+  emitter.applyRepeller(repeller);
+  emitter.applyAttractor(att);
   emitter.run();
-  emitterDown.run();
-
+  emitter2.applyRepeller(repeller);
+  emitter2.applyAttractor(att);
+  emitter2.run();
  
 
+  repeller.show();
+  att.show();
 }
