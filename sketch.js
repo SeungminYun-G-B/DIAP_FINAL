@@ -5,7 +5,7 @@ let repeller;
 let att;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(800, 1000);
   emitter = new Emitter(width / 2, 0);
   emitter2 = new Emitter(width/2,height);
   repeller = new Repeller(width / 2, 150);
