@@ -12,10 +12,9 @@ class Repeller {
 
 
   show() {
-    stroke(0);
-    strokeWeight(2);
-    fill(127);
-    circle(this.position.x, this.position.y, 4);
+    noStroke();
+    fill(40,100,200);
+    circle(this.position.x, this.position.y, 5);
   }
 
   repel(particle) {
