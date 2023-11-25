@@ -1,12 +1,14 @@
 
 let emitter;
+let emitterDown;
 let repeller;
 let att;
 
 function setup() {
   createCanvas(800, 1000);
   emitter = new Emitter(width / 2, 0);
-  repeller = new Repeller(width / 2, 150);
+  emitterDown = new EmitterDown(width/2,height);
+ 
   att = new Attractor(width/2, height-150);
 }
 
@@ -17,11 +19,19 @@ function draw() {
    emitter.addParticle();
   }
 
+  for(let i=0; i<10; i++){
+    emitterDown.addParticle();
+   }
+
   let gravity = createVector(0, 0.1);
   emitter.applyForce(gravity);
 
+  let gravityDown = createVector(0, -0.1);
+  emitterDown.applyForce(gravityDown);
+
 
   emitter.run();
+  emitterDown.run();
 
  
 
