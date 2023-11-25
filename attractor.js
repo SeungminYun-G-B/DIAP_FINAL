@@ -2,13 +2,13 @@ class Attractor {
   constructor(x, y) {
     this.position = createVector(x, y);
     //{!1} How strong is the repeller?
-    this.power = 200;
+    this.power = 500;
   }
   
   move(value) {
     
-    this.position.x = width/2*noise(value*frameCount);
-    this.position.y = height*0.8*noise(value*frameCount);
+    this.position.x = width*noise(value*frameCount/2);
+    this.position.y = height*1.2*noise(value*frameCount/2);
   }
   
 

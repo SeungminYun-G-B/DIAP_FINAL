@@ -17,7 +17,7 @@ function setup() {
 function draw() {
   background(255);
   
-  repeller.move(0.005);
+  repeller.move(0.003);
   att.move(0.005);
 
   for(let i = 0; i<5; i++){
