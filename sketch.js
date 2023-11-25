@@ -33,8 +33,8 @@ function draw() {
   emitter.run();
  
 
-  repeller.show();
-  repeller2.show();
-  att.show();
-  att2.show();
+  // repeller.show();
+  // repeller2.show();
+  // att.show();
+  // att2.show();
 }
