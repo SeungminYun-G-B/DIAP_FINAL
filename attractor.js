@@ -6,6 +6,7 @@ class Attractor {
   }
   
   move(value) {
+    randomSeed(2);
     this.position.x = width/2*noise(value*frameCount);
     this.position.y = height*0.8*noise(value*frameCount);
   }
