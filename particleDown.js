@@ -30,7 +30,15 @@ class ParticleDown {
       circle(this.position.x, this.position.y, 3);
     }
   
-  
+    pull() {
+        let force = p5.Vector.sub(this.position, Particle.position);
+        let distance = force.mag();
+        distance = constrain(distance, 5, 50);
+        let strength = this.power / (distance * distance);
+        force.setMag(strength);
+        this.acceleration.add(force);
+      }
+
     isDead() {
       return this.lifespan < 0.0;
     }

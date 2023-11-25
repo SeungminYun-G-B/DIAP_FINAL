@@ -9,7 +9,7 @@ function setup() {
   emitter = new Emitter(width / 2, 0);
   emitterDown = new EmitterDown(width/2,height);
  
-  att = new Attractor(width/2, height-150);
+
 }
 
 function draw() {
@@ -22,6 +22,9 @@ function draw() {
   for(let i=0; i<10; i++){
     emitterDown.addParticle();
    }
+
+   emitter.applyAttractor();
+   emitterDown.applyAttractor();
 
   let gravity = createVector(0, 0.1);
   emitter.applyForce(gravity);

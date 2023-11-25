@@ -18,12 +18,7 @@ class Emitter {
 
 
   
-  applyAttractor(attractor) {
-    for (let particle of this.particles) {
-      let force = attractor.pull(particle);
-      particle.applyForce(force);
-    }
-  }
+
 
   run() {
     for (let i = this.particles.length - 1; i >= 0; i--) {
