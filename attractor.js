@@ -4,15 +4,18 @@ class Attractor {
     this.power = 2000;
   }
   
-  move(value) {
-    this.position.y = height*noise(value/150*frameCount);
+  move() {
+    this.t =frameCount;
+    this.position.y = 100 * sin(this.t * 0.1) + height/2;
+    this.position.x = 100 * cos(this.t * 0.1) + width/2;
   }
+  
   
 
   show() {
     noStroke();
     fill(200, 130, 50);
-    circle(this.position.x, this.position.y, 5);
+    circle(this.position.x, this.position.y, 15);
   }
 
   pull(particle) {

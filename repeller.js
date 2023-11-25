@@ -1,20 +1,26 @@
 class Repeller {
   constructor(x, y) {
     this.position = createVector(x, y);
-
+    this.speed = 50;
+    this.val = 1;
     this.power = 1500;
   }
   
-  move(value) {
-    this.position.y = height*noise(value/100*frameCount);
+  move() {
+    this.t =frameCount;
+    this.position.x = this.speed * sin(this.t * 0.1) + width/2;
+    this.position.y = this.speed * cos(this.t * 0.1) + height/2;
+    this.speed += this.val
+    if(this.speed>250 || this.speed <50){
+      this.val*= -1;
+    }
   }
-  
 
 
   show() {
     noStroke();
     fill(40,100,200);
-    circle(this.position.x, this.position.y, 5);
+    circle(this.position.x, this.position.y, 15);
   }
 
   repel(particle) {
