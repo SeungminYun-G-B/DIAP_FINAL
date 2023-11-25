@@ -1,7 +1,7 @@
 class Attractor {
   constructor(x, y) {
     this.position = createVector(x, y);
-    this.power = 1000;
+    this.power = 2000;
   }
   
   move(value) {
