@@ -1,9 +1,9 @@
 class Attractor {
   constructor(x, y) {
     this.position = createVector(x, y);
-    this.speed = 20;
+    this.speed = 27;
     this.val = 1;
-    this.power = 3000;
+    this.power = 3200;
   }
   
   move() {
