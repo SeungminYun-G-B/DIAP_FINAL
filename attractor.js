@@ -3,7 +3,7 @@ class Attractor {
     this.position = createVector(x, y);
     this.speed = 20;
     this.val = 1;
-    this.power = 2500;
+    this.power = 3000;
   }
   
   move() {
