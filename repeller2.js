@@ -3,7 +3,7 @@ class Repeller {
       this.position = createVector(x, y);
       this.speed = 200;
       this.val = 1;
-      this.power = 2000;
+      this.power = 1500;
     }
     
     move() {
