@@ -8,7 +8,7 @@ class Repeller {
   
   move() {
     this.t =frameCount;
-    this.position.x = this.speed * cos(this.t * 0.07) + width/2;
+    this.position.x = this.speed * sin(this.t * 0.07) + width/2;
     this.position.y = this.speed * sin(this.t * 0.07) + height/2;
     this.speed += this.val
     if(this.speed>350 || this.speed <30){

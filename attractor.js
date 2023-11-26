@@ -8,7 +8,7 @@ class Attractor {
   
   move() {
     this.t =frameCount;
-    this.position.y = this.speed * sin(this.t * 0.07) + height/2;
+    this.position.y = this.speed * cos(this.t * 0.07) + height/2;
     this.position.x = this.speed * cos(this.t * 0.07) + width/2;
     this.speed += this.val
     if(this.speed>200 || this.speed <50){
