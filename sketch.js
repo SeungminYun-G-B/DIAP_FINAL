@@ -40,7 +40,7 @@ function draw() {
   emitter2.run();
  
 
-  repeller.show();
-  repeller2.show();
-  att.show();
+  // repeller.show();
+  // repeller2.show();
+  // att.show();
 }

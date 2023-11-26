@@ -3,13 +3,13 @@ class Attractor {
     this.position = createVector(x, y);
     this.speed = 20;
     this.val = 1;
-    this.power = 2000;
+    this.power = 2500;
   }
   
   move() {
     this.t =frameCount;
     this.position.y = this.speed * cos(this.t * 0.07)+ height/2;
-    this.position.x = this.speed * sin(this.t * 0.07)+ width/2;
+    this.position.x = -this.speed * sin(this.t * 0.07)+ width/2;
 
   }
   
