@@ -19,14 +19,14 @@ class Particle {
   update() {
     this.velocity.add(this.acceleration);
     this.position.add(this.velocity);
-    this.lifespan -= 2;
+    this.lifespan -= 1.5;
     this.acceleration.mult(0);
   }
 
 
   show() {
     noStroke();
-    fill(50, this.lifespan);
+    fill(20, this.lifespan);
     circle(this.position.x, this.position.y, 3);
   }
 
