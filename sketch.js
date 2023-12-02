@@ -1,72 +1,61 @@
+let emitter;
+let repeller;
+let repeller2;
+let att;
+let att2;
+
 let params = {
   rValue : 1000,
   rValueMin : 200,
-  rValueMax : 2000,
+  rValueMax : 2500,
   rValueStep : 10,
   
   atValue: 1000,
   atValueMin : 200,
   atValueMax : 2500,
-  atValueStep : 10,
-
-  pValue : 10,
-  pValueMin : 0,
-  pValueMax : 20,
-  pValueStep : 1,
-
-  balance : 1,
-  balanceMin : -1,
-  balanceMax : 1,
-  balanceStep : 0.1
+  atValueStep : 10
 }
 
-let emitter;
-let emitter2;
-let repeller;
-let att;
-
 function setup() {
-  createCanvas(400, 600);
-  emitter = new Emitter(width / 2, 0);
-  emitter2 = new Emitter(width/2,height);
-  repeller = new Repeller(width / 2, 150);
-  att = new Attractor(width/2, height-150);
-  
+  createCanvas(800, 800);
+  emitter = new Emitter(width / 2, height/2);
+  repeller = new Repeller(width / 2, height/2);
+  repeller2 = new Repeller2(width / 2, height/2);
+  att = new Attractor(width/2, height/2);
+  att2 = new Attractor2(width/2, height/2);
 
   gui = createGui('power slider');
   gui.addObject(params);
-  gui.setPosition(420, 10);
+  gui.setPosition(1000, 100);
 }
+
 function draw() {
-  const a = params.atValue;
-  const r = params.rValue;
-  repeller.rpower(r);
-  att.apower(a);
   background(255);
+  repeller.move();
+  repeller2.move();
+  att.move();
+  att2.move();
 
-  repeller.rblc(params.balance);
-  att.ablc(params.balance);
-  repeller.move(1);
-  att.move(1);
+  repeller.rpower(params.rValue);
+  repeller2.rpower(params.rValue);
+  att.apower(params.atValue);
+  att2.apower(params.atValue);
 
-  for(let i=0; i<params.pValue; i++){
+
+  for(let i=0; i<15; i++){
    emitter.addParticle();
   }
-  for(let i=0; i<params.pValue; i++){
-    emitter2.addParticle();
-   }
       
-  let gravity = createVector(0, 0.1);
-  emitter.applyForce(gravity);
-  let gravity2 = createVector(0,-0.1);
-   emitter2.applyForce(gravity2);
+
   emitter.applyRepeller(repeller);
+  emitter.applyRepeller(repeller2);
   emitter.applyAttractor(att);
+  emitter.applyAttractor(att2);
   emitter.run();
-  emitter2.applyRepeller(repeller);
-  emitter2.applyAttractor(att);
-  emitter2.run();
  
+
   repeller.show();
+  repeller2.show();
   att.show();
+  att2.show();
 }
