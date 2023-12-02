@@ -10,10 +10,10 @@ let params = {
   atValueMax : 2500,
   atValueStep : 10,
 
-  rSpeed : 0.07,
-  rSpeedMin : 0.03,
-  rSpeedMax : 0.15,
-  rSpeedStep : 0.01,
+  rSpeed : 45,
+  rSpeedMin : 0,
+  rSpeedMax : 90,
+  rSpeedStep : 1,
 
   atSpeed : 1,
   atSpeedMin : 0,
