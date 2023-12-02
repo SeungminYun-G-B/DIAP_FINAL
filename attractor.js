@@ -10,9 +10,6 @@ class Attractor {
     this.power = f;
   }
 
-  atspeed(s){
-    this.val = s;
-  }
 
   move() {
     this.t =frameCount;

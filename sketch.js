@@ -10,13 +10,13 @@ let params = {
   atValueMax : 2500,
   atValueStep : 10,
 
-  rSpeed : 1,
-  rSpeedMin : 0.1,
-  rSpeedMax : 1.5,
-  rSpeedStep : 0.1,
+  rSpeed : 0.07,
+  rSpeedMin : 0.03,
+  rSpeedMax : 0.15,
+  rSpeedStep : 0.01,
 
   atSpeed : 1,
-  atSpeedMin : 0.1,
+  atSpeedMin : 0,
   atSpeedMax : 1.5,
   atSpeedStep : 0.1
 }
@@ -35,20 +35,18 @@ function setup() {
   
   gui = createGui('power slider');
   gui.addObject(params);
-  gui.setPosition(420, 10);
+  gui.setPosition(1000, 100);
 }
 function draw() {
   const a = params.atValue;
   const r = params.rValue;
 
-  repeller.rspeed(params.rSpeed);
   repeller.rpower(r);
-  att.atspeed(params.atSpeed);
   att.apower(a);
   background(255);
 
 
-  repeller.move(1);
+  repeller.move(params.rSpeed);
   att.move(1);
 
   for(let i=0; i<10; i++){

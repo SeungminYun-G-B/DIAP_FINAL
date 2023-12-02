@@ -11,10 +11,6 @@ class Repeller {
     this.power = f;
   }
 
-  rspeed(s){
-    this.val = s;
-  }
-
   move() {
     this.t =frameCount;
     this.position.x = this.speed * cos(this.t * 0.07) + width/2;
