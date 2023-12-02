@@ -6,6 +6,12 @@ class Attractor {
     this.power = 3200;
   }
   
+  apower(f){
+    this.power = f;
+  }
+
+
+
   move() {
     this.t =frameCount;
     this.position.y = this.speed * cos(this.t * 0.07)+ height/2;

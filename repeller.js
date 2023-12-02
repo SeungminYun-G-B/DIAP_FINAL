@@ -6,14 +6,22 @@ class Repeller {
     this.power = 1500;
   }
   
+  rpower(f){
+    this.power = f;
+  }
+
+  rrotate(s){
+    this.s = s;
+  }
+
+  rrange(r){
+    this.speed = r;
+  }
+
   move() {
-    this.t =frameCount;
-    this.position.x = -this.speed * sin(this.t * 0.06)+ width/2;
-    this.position.y = -this.speed * cos(this.t * 0.06)+ height/2;
-    this.speed += this.val
-    if(this.speed>500 || this.speed <250){
-      this.val*= -1;
-    }
+    // this.t =frameCount;
+    this.position.x = -this.speed * sin(this.s * 0.06)+ width/2;
+    this.position.y = -this.speed * cos(this.s * 0.06)+ height/2;
   }
 
 
