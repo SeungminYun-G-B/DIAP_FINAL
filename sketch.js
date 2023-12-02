@@ -12,7 +12,12 @@ let params = {
   pValue : 10,
   pValueMin : 0,
   pValueMax : 20,
-  pValueStep : 1
+  pValueStep : 1,
+
+  balance : 1,
+  balanceMin : -1,
+  balanceMax : 1,
+  balanceStep : 0.1
 }
 
 let emitter;
@@ -39,7 +44,8 @@ function draw() {
   att.apower(a);
   background(255);
 
-
+  repeller.rblc(params.balance);
+  att.ablc(params.balance);
   repeller.move(1);
   att.move(1);
 
