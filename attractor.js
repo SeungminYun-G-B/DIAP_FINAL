@@ -10,6 +10,10 @@ class Attractor {
     this.power = f;
   }
 
+  atspeed(s){
+    this.val = s;
+  }
+
   move() {
     this.t =frameCount;
     this.position.y = this.speed * sin(this.t * 0.07) + height/2;

@@ -8,8 +8,19 @@ let params = {
   atValue: 1000,
   atValueMin : 200,
   atValueMax : 2500,
-  atValueStep : 10
+  atValueStep : 10,
+
+  rSpeed : 1,
+  rSpeedMin : 0.1,
+  rSpeedMax : 1.5,
+  rSpeedStep : 0.1,
+
+  atSpeed : 1,
+  atSpeedMin : 0.1,
+  atSpeedMax : 1.5,
+  atSpeedStep : 0.1
 }
+
 
 let emitter;
 let repeller;
@@ -30,7 +41,9 @@ function draw() {
   const a = params.atValue;
   const r = params.rValue;
 
+  repeller.rspeed(params.rSpeed);
   repeller.rpower(r);
+  att.atspeed(params.atSpeed);
   att.apower(a);
   background(255);
 
