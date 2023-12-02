@@ -10,15 +10,15 @@ let params = {
   atValueMax : 2500,
   atValueStep : 10,
 
-  rSpeed : 45,
-  rSpeedMin : 0,
-  rSpeedMax : 90,
-  rSpeedStep : 1,
+  rRot : 45,
+  rRotMin : 0,
+  rRotMax : 90,
+  rRotStep : 0.1,
 
-  atSpeed : 1,
-  atSpeedMin : 0,
-  atSpeedMax : 1.5,
-  atSpeedStep : 0.1
+  atRot : 45,
+  atRotMin : 0,
+  atRotMax : 90,
+  atRotStep : 0.1
 }
 
 
@@ -40,11 +40,13 @@ function setup() {
 function draw() {
   const a = params.atValue;
   const r = params.rValue;
-  const b = params.rSpeed;
+  const b = params.rRot;
+  const c = params.atRot;
 
   repeller.rpower(r);
-  repeller.rspeed(b);
+  repeller.rrotate(b);
   att.apower(a);
+  att.arotate(c);
   background(255);
 
 
