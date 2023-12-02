@@ -7,7 +7,12 @@ let params = {
   atValue: 1000,
   atValueMin : 200,
   atValueMax : 2500,
-  atValueStep : 10
+  atValueStep : 10,
+
+  pValue : 10,
+  pValueMin : 0,
+  pValueMax : 20,
+  pValueStep : 1
 }
 
 let emitter;
@@ -38,10 +43,10 @@ function draw() {
   repeller.move(1);
   att.move(1);
 
-  for(let i=0; i<15; i++){
+  for(let i=0; i<params.pValue; i++){
    emitter.addParticle();
   }
-  for(let i=0; i<15; i++){
+  for(let i=0; i<params.pValue; i++){
     emitter2.addParticle();
    }
       
