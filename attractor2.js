@@ -20,7 +20,7 @@ class Attractor2 {
       this.position.y = this.speed * cos(this.t * 0.03) + height/2;
       this.position.x = this.speed * this.mode + width/2;
       this.speed += this.val
-      if(this.speed>200 || this.speed <50){
+      if(this.speed>250 || this.speed <40){
         this.val*= -1;
       }
     }

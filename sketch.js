@@ -15,7 +15,7 @@ let params = {
   atValueMax : 2500,
   atValueStep : 10,
 
-  type : ['tan','sin']
+  type : ['tan','sin','cos']
 }
 
 function setup() {
@@ -48,6 +48,11 @@ function draw() {
     repeller2.rtype(sin(frameCount * 0.03));
     att.atype(sin(frameCount * 0.03));
     att2.atype(sin(frameCount * 0.03));
+  }else if(params.type == 'cos'){
+    repeller.rtype(cos(frameCount * 0.03));
+    repeller2.rtype(cos(frameCount * 0.03));
+    att.atype(cos(frameCount * 0.03));
+    att2.atype(cos(frameCount * 0.03));
   }
 
   repeller.rpower(params.rValue);

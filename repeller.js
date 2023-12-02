@@ -19,7 +19,7 @@ class Repeller {
     this.position.x = this.speed * this.mode + width/2;
     this.position.y = this.speed * cos(this.t * 0.03) + height/2;
     this.speed += this.val
-    if(this.speed>350 || this.speed <30){
+    if(this.speed>330 || this.speed <35){
       this.val*= -1;
     }
   }
