@@ -47,19 +47,20 @@ function draw() {
   repeller2.move();
   att.move();
 
-
+let rot = map(mouseX, 0, width, 0, 180);
+let rng = map(mouseY, 0, height, 100, 400);
   
 
-if(params.Mode == slider){
+if(params.Mode == 'slider'){
   repeller.rrotate(params.rRot);
   repeller.rrange(params.rRange);
   repeller2.rrotate(params.rRot);
   repeller2.rrange(params.rRange);
-}else if(params.Mode == mouse){
-  repeller.rrotate(mouseX);
-  repeller.rrange(mouseY);
-  repeller2.rrotate(mouseX);
-  repeller2.rrange(mouseY);
+}else if(params.Mode == 'mouse'){
+  repeller.rrotate(rot);
+  repeller.rrange(rng);
+  repeller2.rrotate(rot);
+  repeller2.rrange(rng);
 }
   repeller.rpower(params.rValue);
   repeller2.rpower(params.rValue);
