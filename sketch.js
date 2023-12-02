@@ -10,10 +10,10 @@ let params = {
   atValueMax : 2500,
   atValueStep : 10,
 
-  rSpeed : 700,
-  rSpeedMin : 300,
-  rSpeedMax : 1500,
-  rSpeedStep : 100,
+  rSpeed : 0.07,
+  rSpeedMin : 0.03,
+  rSpeedMax : 0.15,
+  rSpeedStep : 0.01,
 
   atSpeed : 1,
   atSpeedMin : 0,
@@ -39,16 +39,17 @@ function setup() {
 }
 function draw() {
   const a = params.atValue;
-  const r = params.rSpeed;
+  const r = params.rValue;
   const b = params.rSpeed;
 
   repeller.rpower(r);
+  repeller.rspeed(b);
   att.apower(a);
   background(255);
 
 
-  repeller.move(b);
-  att.move(1);
+  repeller.move();
+  att.move();
 
   for(let i=0; i<10; i++){
    emitter.addParticle();
