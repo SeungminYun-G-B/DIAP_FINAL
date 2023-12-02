@@ -1,27 +1,17 @@
 class Repeller {
   constructor(x, y) {
     this.position = createVector(x, y);
-    this.speed = 100;
+    this.speed = 300;
     this.val = 1;
-    this.power = 500;
-    this.s = 0.07;
+    this.power = 1500;
   }
   
-
-  rpower(f){
-    this.power = f;
-  }
-
-  rrotate(s){
-    this.s = s;
-  }
-
   move() {
-    // this.t =frameCount;
-    this.position.x = this.speed * cos(this.s * 0.07) + width/2;
-    this.position.y = this.speed * sin(this.s * 0.07) + height/2;
+    this.t =frameCount;
+    this.position.x = -this.speed * sin(this.t * 0.06)+ width/2;
+    this.position.y = -this.speed * cos(this.t * 0.06)+ height/2;
     this.speed += this.val
-    if(this.speed>350 || this.speed <30){
+    if(this.speed>500 || this.speed <250){
       this.val*= -1;
     }
   }
