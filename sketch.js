@@ -21,9 +21,9 @@ let params = {
   rRotStep : 0.1,
 
   rRange : 250,
-  rRangetMin : 30,
-  rRangeMax : 500,
-  rRangeStep : 10,
+  rRangeMin : 100,
+  rRangeMax : 400,
+  rRangeStep : 10
 }
 
 function setup() {
@@ -50,8 +50,8 @@ function draw() {
   repeller.rrotate(params.rRot);
   repeller.rrange(params.rRange);
   repeller2.rpower(params.rValue);
-  repeller2.rrotate(params.rRange);
-  repeller2.rrange(params.rRot);
+  repeller2.rrotate(params.rRot);
+  repeller2.rrange(params.rRange);
   att.apower(params.atValue);
 
 

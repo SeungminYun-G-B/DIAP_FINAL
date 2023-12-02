@@ -19,7 +19,7 @@ class Repeller2 {
       }
     
     move() {
-      this.t =frameCount;
+    //   this.t =frameCount;
       this.position.x = this.speed * sin(this.s * 0.06)+ width/2;
       this.position.y = this.speed * cos(this.s * 0.06)+ height/2;
     }
