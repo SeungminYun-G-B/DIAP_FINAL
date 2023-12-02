@@ -15,10 +15,7 @@ let params = {
   atValueMax : 2500,
   atValueStep : 10,
 
-  tempo : 45,
-  tempoMin : 0,
-  tempoMax : 180,
-  tempoStep : 1
+  type : ['tan','sin']
 }
 
 function setup() {
@@ -41,10 +38,17 @@ function draw() {
   att.move();
   att2.move();
 
-  repeller.rtemp(params.tempo);
-  repeller2.rtemp(params.tempo);
-  att.atemp(params.tempo);
-  att2.atemp(params.tempo);
+  if(params.type = 'tan'){
+    repeller.rtype(tan(frameCount * 0.03));
+    repeller2.rtype(tan(frameCount * 0.03));
+    att.atype(tan(frameCount * 0.03));
+    att2.atype(tan(frameCount * 0.03));
+  }else if(params.type = 'sin'){
+    repeller.rtype(sin(frameCount * 0.03));
+    repeller2.rtype(sin(frameCount * 0.03));
+    att.atype(sin(frameCount * 0.03));
+    att2.atype(sin(frameCount * 0.03));
+  }
 
   repeller.rpower(params.rValue);
   repeller2.rpower(params.rValue);

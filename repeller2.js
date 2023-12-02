@@ -4,22 +4,21 @@ class Repeller2 {
     this.speed = 100;
     this.val = 1;
     this.power = 1500;
-    this.temp = 0.03;
+    this.mode;
   }
 
   rpower(p){
     this.power = p;
   }
 
-  rtemp(t){
-    this.temp = t;
+  rtype(t){
+    this.mode = t
   }
-  
   
   move() {
     this.t =frameCount;
-    this.position.y = -this.speed * cos(this.temp * 0.03) + height/2;
-    this.position.x = -this.speed * tan(this.temp * 0.03) + width/2;
+    this.position.y = -this.speed * cos(this.t * 0.03) + height/2;
+    this.position.x = -this.speed * this.mode + width/2;
     this.speed += this.val
     if(this.speed>350 || this.speed <30){
       this.val*= -1;
