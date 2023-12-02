@@ -47,8 +47,8 @@ function draw() {
   repeller2.move();
   att.move();
 
-let rot = map(mouseX, 0, width, 0, 180);
-let rng = map(mouseY, 0, height, 100, 400);
+let rot = map(mouseX, 0, windowWidth, 0, 180);
+let rng = map(mouseY, 0, windowHeight, 100, 400);
   
 
 if(params.Mode == 'slider'){
