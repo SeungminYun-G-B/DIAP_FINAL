@@ -38,12 +38,12 @@ function draw() {
   att.move();
   att2.move();
 
-  if(params.type = 'tan'){
+  if(params.type == 'tan'){
     repeller.rtype(tan(frameCount * 0.03));
     repeller2.rtype(tan(frameCount * 0.03));
     att.atype(tan(frameCount * 0.03));
     att2.atype(tan(frameCount * 0.03));
-  }else if(params.type = 'sin'){
+  }else if(params.type == 'sin'){
     repeller.rtype(sin(frameCount * 0.03));
     repeller2.rtype(sin(frameCount * 0.03));
     att.atype(sin(frameCount * 0.03));
