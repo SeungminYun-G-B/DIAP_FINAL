@@ -17,13 +17,15 @@ let params = {
 
   rRot : 45,
   rRotMin : 0,
-  rRotMax : 90,
+  rRotMax : 180,
   rRotStep : 0.1,
 
   rRange : 250,
   rRangeMin : 100,
   rRangeMax : 400,
-  rRangeStep : 10
+  rRangeStep : 5,
+
+  Mode : ['slider','mouse']
 }
 
 function setup() {
@@ -46,12 +48,21 @@ function draw() {
   att.move();
 
 
-  repeller.rpower(params.rValue);
+  
+
+if(params.Mode == slider){
   repeller.rrotate(params.rRot);
   repeller.rrange(params.rRange);
-  repeller2.rpower(params.rValue);
   repeller2.rrotate(params.rRot);
   repeller2.rrange(params.rRange);
+}else if(params.Mode == mouse){
+  repeller.rrotate(mouseX);
+  repeller.rrange(mouseY);
+  repeller2.rrotate(mouseX);
+  repeller2.rrange(mouseY);
+}
+  repeller.rpower(params.rValue);
+  repeller2.rpower(params.rValue);
   att.apower(params.atValue);
 
 
