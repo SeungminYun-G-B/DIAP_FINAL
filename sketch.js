@@ -13,7 +13,12 @@ let params = {
   atValue: 1000,
   atValueMin : 200,
   atValueMax : 2500,
-  atValueStep : 10
+  atValueStep : 10,
+
+  tempo : 45,
+  tempoMin : 0,
+  tempoMax : 180,
+  tempoStep : 1
 }
 
 function setup() {
@@ -35,6 +40,11 @@ function draw() {
   repeller2.move();
   att.move();
   att2.move();
+
+  repeller.rtemp(params.tempo);
+  repeller2.rtemp(params.tempo);
+  att.atemp(params.tempo);
+  att2.atemp(params.tempo);
 
   repeller.rpower(params.rValue);
   repeller2.rpower(params.rValue);
