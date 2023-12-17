@@ -15,7 +15,7 @@ let params = {
   likeabilityMax : 2500,
   likeabilityStep : 10,
 
-  type : ['fleeting','coexistence','friction']
+  type : ['Fleeting','Coexistence','Friction']
 }
 
 function setup() {
@@ -28,7 +28,7 @@ function setup() {
 
   gui = createGui('Relationship');
   gui.addObject(params);
-  gui.setPosition(1000, 100);
+  gui.setPosition(1700, 200);
 }
 
 function draw() {
@@ -38,17 +38,17 @@ function draw() {
   att.move();
   att2.move();
 
-  if(params.type == 'fleeting'){
+  if(params.type == 'Fleeting'){
     repeller.rtype(tan(frameCount * 0.03));
     repeller2.rtype(tan(frameCount * 0.03));
     att.atype(tan(frameCount * 0.03));
     att2.atype(tan(frameCount * 0.03));
-  }else if(params.type == 'coexistence'){
+  }else if(params.type == 'Coexistence'){
     repeller.rtype(sin(frameCount * 0.03));
     repeller2.rtype(sin(frameCount * 0.03));
     att.atype(sin(frameCount * 0.03));
     att2.atype(sin(frameCount * 0.03));
-  }else if(params.type == 'friction'){
+  }else if(params.type == 'Friction'){
     repeller.rtype(cos(frameCount * 0.03));
     repeller2.rtype(cos(frameCount * 0.03));
     att.atype(cos(frameCount * 0.03));
