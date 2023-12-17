@@ -28,7 +28,7 @@ function setup() {
 
   gui = createGui('Relationship');
   gui.addObject(params);
-  gui.setPosition(1700, 200);
+  gui.setPosition(1700, 160);
 }
 
 function draw() {
