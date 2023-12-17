@@ -5,17 +5,17 @@ let att;
 let att2;
 
 let params = {
-  rValue : 1000,
-  rValueMin : 200,
-  rValueMax : 2500,
-  rValueStep : 10,
+  unfavorability : 1000,
+  unfavorabilityMin : 200,
+  unfavorabilityMax : 2500,
+  unfavorabilityStep : 10,
   
-  atValue: 1000,
-  atValueMin : 200,
-  atValueMax : 2500,
-  atValueStep : 10,
+  likeability: 1000,
+  likeabilityeMin : 200,
+  likeabilityMax : 2500,
+  likeabilityStep : 10,
 
-  type : ['tan','sin','cos']
+  type : ['fleeting','coexistence','friction']
 }
 
 function setup() {
@@ -26,7 +26,7 @@ function setup() {
   att = new Attractor(width/2, height/2);
   att2 = new Attractor2(width/2, height/2);
 
-  gui = createGui('power slider');
+  gui = createGui('Relationship');
   gui.addObject(params);
   gui.setPosition(1000, 100);
 }
@@ -38,17 +38,17 @@ function draw() {
   att.move();
   att2.move();
 
-  if(params.type == 'tan'){
+  if(params.type == 'fleeting'){
     repeller.rtype(tan(frameCount * 0.03));
     repeller2.rtype(tan(frameCount * 0.03));
     att.atype(tan(frameCount * 0.03));
     att2.atype(tan(frameCount * 0.03));
-  }else if(params.type == 'sin'){
+  }else if(params.type == 'coexistence'){
     repeller.rtype(sin(frameCount * 0.03));
     repeller2.rtype(sin(frameCount * 0.03));
     att.atype(sin(frameCount * 0.03));
     att2.atype(sin(frameCount * 0.03));
-  }else if(params.type == 'cos'){
+  }else if(params.type == 'friction'){
     repeller.rtype(cos(frameCount * 0.03));
     repeller2.rtype(cos(frameCount * 0.03));
     att.atype(cos(frameCount * 0.03));
