@@ -11,7 +11,7 @@ let params = {
   unfavorabilityStep : 10,
   
   likeability: 1000,
-  likeabilityeMin : 200,
+  likeabilityMin : 200,
   likeabilityMax : 2500,
   likeabilityStep : 10,
 
@@ -55,10 +55,10 @@ function draw() {
     att2.atype(cos(frameCount * 0.03));
   }
 
-  repeller.rpower(params.rValue);
-  repeller2.rpower(params.rValue);
-  att.apower(params.atValue);
-  att2.apower(params.atValue);
+  repeller.rpower(params.unfavorability);
+  repeller2.rpower(params.unfavorability);
+  att.apower(params.likeability);
+  att2.apower(params.likeability);
 
 
   for(let i=0; i<15; i++){
