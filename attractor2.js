@@ -28,9 +28,12 @@ class Attractor2 {
     
   
     show() {
-      noStroke();
-      fill(200, 130, 50);
-      circle(this.position.x, this.position.y, 15);
+      // noStroke();
+      // fill(200, 130, 50);
+      // circle(this.position.x, this.position.y, 15);
+      tint(20,100,200);
+    imageMode(CENTER);
+    image(img2,this.position.x,this.position.y,55,55);
     }
   
     pull(particle) {

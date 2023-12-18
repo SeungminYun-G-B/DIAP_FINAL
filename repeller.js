@@ -26,9 +26,12 @@ class Repeller {
 
 
   show() {
-    noStroke();
-    fill(40,100,200);
-    circle(this.position.x, this.position.y, 15);
+    // noStroke();
+    // fill(40,100,200);
+    // circle(this.position.x, this.position.y, 15);
+    tint(200,20,100);
+    imageMode(CENTER);
+    image(img1,this.position.x,this.position.y,50,50);
   }
 
   repel(particle) {

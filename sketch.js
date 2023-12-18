@@ -17,7 +17,10 @@ let params = {
 
   type : ['Fleeting','Coexistence','Friction']
 }
-
+function preload() {
+  img1 = loadImage('data/hand-01.png');
+  img2 = loadImage('data/hand-02.png');
+}
 function setup() {
   createCanvas(800, 800);
   emitter = new Emitter(width / 2, height/2);
