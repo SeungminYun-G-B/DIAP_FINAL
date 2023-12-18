@@ -17,10 +17,12 @@ let params = {
 
   type : ['Fleeting','Coexistence','Friction']
 }
+
 function preload() {
   img1 = loadImage('data/hand-01.png');
   img2 = loadImage('data/hand-02.png');
 }
+
 function setup() {
   createCanvas(800, 800);
   emitter = new Emitter(width / 2, height/2);
@@ -74,10 +76,13 @@ function draw() {
   emitter.applyAttractor(att);
   emitter.applyAttractor(att2);
   emitter.run();
+  
+  c = map(params.unfavorability,200,2500,0,255);
+  r = map(params.likeability,200,2500,0,255);
  
 
-  repeller.show();
-  repeller2.show();
-  att.show();
-  att2.show();
+  repeller.show(20,20,c);
+  repeller2.show(20,20,c);
+  att.show(r,10,20);
+  att2.show(r,10,20);
 }

@@ -26,11 +26,11 @@ class Repeller2 {
   }
 
 
-  show() {
+  show(r,g,b) {
     // noStroke();
     // fill(40,100,200);
     // circle(this.position.x, this.position.y, 15);
-    tint(200,20,100);
+    tint(r,g,b);
     imageMode(CENTER);
     image(img1,this.position.x,this.position.y,50,50);
   }

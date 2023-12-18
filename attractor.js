@@ -28,11 +28,11 @@ class Attractor {
   
   
 
-  show() {
+  show(r,g,b) {
     // noStroke();
     // fill(200, 130, 50);
     // circle(this.position.x, this.position.y, 15);
-    tint(20,100,200);
+    tint(r,g,b);
     imageMode(CENTER);
     image(img2,this.position.x,this.position.y,55,55);
   }
